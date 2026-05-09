@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "Brow",
+    "slug": "brow",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "android": {
+      "package": "com.barnstudyo.brow",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1E7AE6"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ead3708e-1436-4475-8df4-683a4d4a1e66"
+      }
+    }
+  }
+}
