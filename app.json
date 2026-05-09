@@ -5,6 +5,20 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "splash": {
+cat > ~/brow/app.json << 'EOF'
+{
+  "expo": {
+    "name": "Brow",
+    "slug": "brow",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1E7AE6"
+    },
     "android": {
       "package": "com.barnstudyo.brow",
       "adaptiveIcon": {
