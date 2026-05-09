@@ -7,10 +7,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      -
+
+YAML
+
+
+YAML
+cat > ~/brow/.github/workflows/build.yml << 'EOF'
+name: Build APK
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Expo
@@ -20,6 +36,6 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
       - name: Install
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Build
         run: eas build --platform android --profile preview --non-interactive
