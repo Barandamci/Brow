@@ -1,15 +1,25 @@
 name: Build APK
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 jobs:
   build:
-cd ~/brow
-git add .github/
-git commit -m "fix workflow yaml"
-git push origin main
-
-
-
-
-
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Expo
+        uses: expo/expo-github-action@v8
+        with:
+          expo-version: latest
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+      - name: Install
+        run: npm install
+      - name: Build
+        run: eas build --platform android --profile preview --non-interactive
